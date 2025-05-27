@@ -27,4 +27,6 @@ public class Sucursal extends Base{
 
     //Relación 1 a muchos.
     private Set<Promocion> promociones = new HashSet<>();
+    private Set<Pedido> pedidos = new HashSet<>();
+    private Set<Categoria> categorias = new HashSet<>();
 }

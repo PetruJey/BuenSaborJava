@@ -5,8 +5,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-import java.util.HashSet;
-import java.util.Set;
 
 //Getters, Setters y Constructores.
 @AllArgsConstructor
@@ -15,9 +13,10 @@ import java.util.Set;
 @Setter
 @SuperBuilder
 
-public class Categoria extends Base{
-    private String denominacion;
+public class Usuario extends Base{
+    private String auth0Id;
+    private String username;
 
-    //Relacion 1 a muchos.
-    private Set<Articulo> articulos = new HashSet<>();
+    //Relacion 1 a 1.
+    private Cliente cliente;
 }

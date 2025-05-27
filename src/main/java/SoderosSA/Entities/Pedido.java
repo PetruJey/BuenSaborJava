@@ -10,6 +10,8 @@ import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.HashSet;
+import java.util.Set;
 
 //Getters, Setters y Constructores.
 @AllArgsConstructor
@@ -26,4 +28,13 @@ public class Pedido extends Base{
     private TipoEnvio tipoEnvio;
     private FormaPago formaPago;
     private LocalDate FechaPedido;
+
+    //Relacion 1 a muchos.
+    private Set<DetallePedido> detallePedidos = new HashSet<>();
+
+    //Relacion 1 a 1.
+    private Sucursal sucursal;
+    private Domicilio domicilio;
+    private Factura factura;
+    private Cliente cliente;
 }
