@@ -30,6 +30,7 @@ public class Promocion extends Base{
     private TipoPromocion tipoPromocion;
 
     //Relación 1 a muchos.
+    private Set<Articulo> articulos = new HashSet<>();
     private Set<Sucursal> sucursales = new HashSet<>();
     private Set<Imagen> imagenes = new HashSet<>();
 }

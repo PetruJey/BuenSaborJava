@@ -18,4 +18,9 @@ public class Provincia extends Base{
 
     //Relacion 1 a 1.
     private Pais pais;
+
+    //Metodo para asignar un pais.
+    public void asignarPais(Pais pais){
+        this.pais = pais;
+    }
 }

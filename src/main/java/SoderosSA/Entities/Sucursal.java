@@ -29,4 +29,9 @@ public class Sucursal extends Base{
     private Set<Promocion> promociones = new HashSet<>();
     private Set<Pedido> pedidos = new HashSet<>();
     private Set<Categoria> categorias = new HashSet<>();
+
+    //Metodo para asignar un Domicilio.
+    public void asignarDomicilio(Domicilio domicilio){
+        this.domicilio = domicilio;
+    }
 }

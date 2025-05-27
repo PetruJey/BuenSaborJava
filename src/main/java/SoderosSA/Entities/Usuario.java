@@ -16,7 +16,4 @@ import lombok.experimental.SuperBuilder;
 public class Usuario extends Base{
     private String auth0Id;
     private String username;
-
-    //Relacion 1 a 1.
-    private Cliente cliente;
 }

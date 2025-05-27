@@ -21,7 +21,6 @@ public abstract class Articulo extends Base{
 
     //Relacion 1 a muchos.
     private Set<Imagen> imagenes = new HashSet<>();
-    private Set<DetallePedido> detallePedidos = new HashSet<>();
 
     //Relacion 1 a 1.
     private UnidadMedida unidadMedida;

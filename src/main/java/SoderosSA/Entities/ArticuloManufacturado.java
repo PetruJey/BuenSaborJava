@@ -1,5 +1,7 @@
 package SoderosSA.Entities;
 
+import java.util.HashSet;
+import java.util.Set;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,5 +21,5 @@ public class ArticuloManufacturado extends Articulo{
     private String preparacion;
 
     //Relacion 1 a 1.
-    private ArticuloManufacturadoDetalle articuloManufacturadoDetalle;
+    private Set<ArticuloManufacturadoDetalle> articuloManufacturadoDetalles = new HashSet<>();
 }

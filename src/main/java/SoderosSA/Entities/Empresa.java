@@ -20,5 +20,11 @@ public class Empresa extends Base{
     private String razonSocial;
     private Integer cuil;
 
+    //Relacion 1 a muchos.
     private Set<Sucursal> sucursales = new HashSet<>();
+
+    //Metodo para agregar sucursales.
+    public void agregarSucursal(Sucursal sucursal){
+        sucursales.add(sucursal);
+    }
 }

@@ -22,10 +22,10 @@ public class Domicilio extends Base{
     private Integer cp;
 
     //Relacion 1 a 1.
-    private Sucursal sucursal;
     private Localidad localidad;
 
-    //Relacion 1 a muchos.
-    private Set<Pedido> pedidos = new HashSet<>();
-    private Set<Cliente> clientes = new HashSet<>();
+    //Metodo para asignar una localidad.
+    public void asignarLocalidad(Localidad localidad){
+        this.localidad = localidad;
+    }
 }

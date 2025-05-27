@@ -22,4 +22,7 @@ public class Factura extends Base{
     private String mpPreferenceId;
     private FormaPago formaPago;
     private Double totalVenta;
+
+    //Relacion 1 a 1.
+    private Pedido pedido;
 }
