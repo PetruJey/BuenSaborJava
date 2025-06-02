@@ -65,6 +65,13 @@ public class Main {
 
         //Se crean relaciones.
         empresa.agregarSucursal(sucursal);
+        sucursal.setDomicilio(domicilio);
+        domicilio.setLocalidad(localidad);
+        localidad.setProvincia(provincia);
+        provincia.setPais(pais);
 
+
+        System.out.println(empresa);
+        System.out.println(sucursal);
     }
 }

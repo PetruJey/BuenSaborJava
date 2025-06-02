@@ -1,10 +1,7 @@
 package SoderosSA.Entities;
 
 import SoderosSA.Entities.Enums.TipoPromocion;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDate;
@@ -30,7 +27,10 @@ public class Promocion extends Base{
     private TipoPromocion tipoPromocion;
 
     //Relación 1 a muchos.
+    @Builder.Default
     private Set<Articulo> articulos = new HashSet<>();
+    @Builder.Default
     private Set<Sucursal> sucursales = new HashSet<>();
+    @Builder.Default
     private Set<Imagen> imagenes = new HashSet<>();
 }

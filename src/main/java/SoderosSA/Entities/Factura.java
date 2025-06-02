@@ -24,5 +24,6 @@ public class Factura extends Base{
     private Double totalVenta;
 
     //Relacion 1 a 1.
+    @Setter
     private Pedido pedido;
 }

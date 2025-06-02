@@ -22,10 +22,16 @@ public class Domicilio extends Base{
     private Integer cp;
 
     //Relacion 1 a 1.
+    @Setter
     private Localidad localidad;
 
-    //Metodo para asignar una localidad.
-    public void asignarLocalidad(Localidad localidad){
-        this.localidad = localidad;
+    @Override
+    public String toString() {
+        return "Domicilio{" +
+                "calle='" + calle + '\'' +
+                ", numero=" + numero +
+                ", cp=" + cp +
+                ", localidad=" + (localidad != null ? localidad.getNombre() : "No asignada") + '\'' +
+                '}';
     }
 }

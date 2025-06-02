@@ -1,9 +1,6 @@
 package SoderosSA.Entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -24,9 +21,12 @@ public class Cliente extends Base{
     private LocalDate fechaNacimiento;
 
     //Relacion 1 a 1.
+    @Setter
     private Imagen imagen;
+    @Setter
     private Usuario usuario;
 
     //Relacion 1 a muchos.
+    @Builder.Default
     private Set<Domicilio> domicilios = new HashSet<>();
 }

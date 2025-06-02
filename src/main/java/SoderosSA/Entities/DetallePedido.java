@@ -18,6 +18,8 @@ public class DetallePedido extends Base{
     private Double subTotal;
 
     //Relacion 1 a 1.
+    @Setter
     private Articulo articulo;
+    @Setter
     private Pedido pedido;
 }

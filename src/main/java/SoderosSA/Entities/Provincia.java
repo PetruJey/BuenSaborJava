@@ -17,10 +17,14 @@ public class Provincia extends Base{
     private String nombre;
 
     //Relacion 1 a 1.
+    @Setter
     private Pais pais;
 
-    //Metodo para asignar un pais.
-    public void asignarPais(Pais pais){
-        this.pais = pais;
+    @Override
+    public String toString() {
+        return "Provincia{" +
+                "nombre='" + nombre + '\n' +
+                ", pais=" + (pais != null ? pais.getNombre() : "No asignado") + '\n' +
+                '}';
     }
 }

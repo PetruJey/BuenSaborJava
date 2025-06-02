@@ -17,5 +17,6 @@ public class ArticuloManufacturadoDetalle extends Base{
     private Integer cantidad;
 
     //Relacion 1 a 1.
+    @Setter
     private ArticuloInsumo articuloInsumo;
 }
