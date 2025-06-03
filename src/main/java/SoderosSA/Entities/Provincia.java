@@ -23,8 +23,8 @@ public class Provincia extends Base{
     @Override
     public String toString() {
         return "Provincia{" +
-                "nombre='" + nombre + '\n' +
-                ", pais=" + (pais != null ? pais.getNombre() : "No asignado") + '\n' +
+                "\nnombre='" + nombre + '\n' +
+                "\n, pais=" + (pais != null ? pais.getNombre() : "No asignado") + '\n' +
                 '}';
     }
 }

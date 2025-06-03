@@ -15,4 +15,11 @@ import lombok.experimental.SuperBuilder;
 
 public class Imagen extends Base{
     private String denominacion;
+
+    @Override
+    public String toString() {
+        return "Imagen{" +
+                "\ndenominacion='" + denominacion + '\'' +
+                '}';
+    }
 }

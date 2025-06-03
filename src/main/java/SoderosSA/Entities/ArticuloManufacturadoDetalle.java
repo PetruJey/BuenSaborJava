@@ -13,10 +13,18 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @SuperBuilder
 
-public class ArticuloManufacturadoDetalle extends Base{
+public class ArticuloManufacturadoDetalle extends Base {
     private Integer cantidad;
 
     //Relacion 1 a 1.
     @Setter
     private ArticuloInsumo articuloInsumo;
+
+    @Override
+    public String toString() {
+        return "ArticuloManufacturadoDetalle{" +
+                "\ncantidad=" + cantidad +
+                "\n, articuloInsumo=" + articuloInsumo +
+                '}';
+    }
 }

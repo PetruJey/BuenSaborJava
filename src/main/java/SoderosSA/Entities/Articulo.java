@@ -21,8 +21,13 @@ public abstract class Articulo extends Base{
     private Set<Imagen> imagenes = new HashSet<>();
 
     //Relacion 1 a 1.
+    @Setter
     private UnidadMedida unidadMedida;
     @Setter
     private Categoria categoria;
+
+    public void agregarImagenes(Imagen imagen){
+        imagenes.add(imagen);
+    }
 
 }

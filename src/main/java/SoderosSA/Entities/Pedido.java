@@ -38,4 +38,25 @@ public class Pedido extends Base{
     private Factura factura;
     @Setter
     private Cliente cliente;
+
+    public void agregarDetallePedidos(DetallePedido detallePedido){
+        detallePedidos.add(detallePedido);
+    }
+
+    @Override
+    public String toString() {
+        return "Pedido{" +
+                "\nhoraEstimadaFinalizacion=" + horaEstimadaFinalizacion +
+                "\n, total=" + total +
+                "\n, totalCosto=" + totalCosto +
+                "\n, estado=" + estado +
+                "\n, tipoEnvio=" + tipoEnvio +
+                "\n, formaPago=" + formaPago +
+                "\n, FechaPedido=" + FechaPedido +
+                "\n, detallePedidos=" + detallePedidos +
+                "\n, sucursal=" + sucursal.getNombre() +
+                "\n, cliente=" + cliente.getNombre() + " " + cliente.getApellido() +
+                "\n, factura=" + factura +
+                '}';
+    }
 }

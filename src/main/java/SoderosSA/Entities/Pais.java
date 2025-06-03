@@ -19,7 +19,7 @@ public class Pais extends Base{
     @Override
     public String toString() {
         return "Pais{" +
-                "nombre='" + nombre + '\'' +
+                "\nnombre='" + nombre + '\'' +
                 '}';
     }
 }

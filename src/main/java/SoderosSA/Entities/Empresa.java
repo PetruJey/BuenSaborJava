@@ -29,10 +29,10 @@ public class Empresa extends Base{
 
     @Override
     public String toString() {
-        return "Empresa{\n" +
-                "nombre='" + nombre + '\n' +
-                ", razonSocial='" + razonSocial + '\n' +
-                ", cuil=" + cuil +
+        return "Empresa{" +
+                "\nnombre='" + nombre +
+                "\n, razonSocial='" + razonSocial +
+                "\n, cuil=" + cuil +
                 "\n, sucursales=" + sucursales.stream()
                 .map(Sucursal::getNombre)
                 .reduce((s1, s2) -> s1 + ", " + s2)

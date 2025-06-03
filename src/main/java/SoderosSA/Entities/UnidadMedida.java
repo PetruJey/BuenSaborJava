@@ -15,4 +15,11 @@ import lombok.experimental.SuperBuilder;
 
 public class UnidadMedida {
     private String denominacion;
+
+    @Override
+    public String toString() {
+        return "UnidadMedida{" +
+                "\ndenominacion='" + denominacion + '\'' +
+                '}';
+    }
 }

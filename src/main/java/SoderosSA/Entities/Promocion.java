@@ -33,4 +33,30 @@ public class Promocion extends Base{
     private Set<Sucursal> sucursales = new HashSet<>();
     @Builder.Default
     private Set<Imagen> imagenes = new HashSet<>();
+
+    public void agregarImagenes(Imagen imagen){
+        imagenes.add(imagen);
+    }
+    public void agregarSucursal(Sucursal sucursal){
+        sucursales.add(sucursal);
+    }
+
+    @Override
+    public String toString() {
+        return "Promocion{" +
+                "\ndenominacion='" + denominacion + '\'' +
+                "\n, FechaDesde=" + FechaDesde +
+                "\n, FechaHasta=" + FechaHasta +
+                "\n, HoraDesde=" + HoraDesde +
+                "\n, HoraHasta=" + HoraHasta +
+                "\n, descripcionDescuento='" + descripcionDescuento + '\'' +
+                "\n, precioPromocional=" + precioPromocional +
+                "\n, tipoPromocion=" + tipoPromocion +
+                "\n, sucursales=" + sucursales.stream()
+                .map(Sucursal::getNombre)
+                .reduce((s1, s2) -> s1 + ", " + s2)
+                .orElse("No hay sucursales") +
+                ", imagenes=" + imagenes +
+                '}';
+    }
 }

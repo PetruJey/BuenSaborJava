@@ -30,19 +30,18 @@ public class Sucursal extends Base{
     @Builder.Default
     private Set<Categoria> categorias = new HashSet<>();
 
-    //Metodo para asignar un Domicilio.
-    public void asignarDomicilio(Domicilio domicilio){
-        this.domicilio = domicilio;
+    public void agregarPromociones(Promocion promocion){
+        promociones.add(promocion);
     }
 
     @Override
     public String toString() {
-        return "Sucursal\n{" +
-                "nombre='" + nombre + '\n' +
-                ", horarioApertura=" + horarioApertura +
+        return "Sucursal{" +
+                "\nnombre='" + nombre +
+                "\n, horarioApertura=" + horarioApertura +
                 "\n, horarioCierre=" + horarioCierre +
-                "\n, empresa=" + (empresa != null ? empresa.getNombre() : "No asignada") + '\n' +
-                ", domicilio=" + domicilio +
+                "\n, empresa=" + (empresa != null ? empresa.getNombre() : "No asignada") +
+                "\n, domicilio=" + domicilio +
                 '}';
     }
 }

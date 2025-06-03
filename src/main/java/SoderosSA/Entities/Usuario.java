@@ -16,4 +16,12 @@ import lombok.experimental.SuperBuilder;
 public class Usuario extends Base{
     private String auth0Id;
     private String username;
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "\nusername='" + username + '\'' +
+                "\n, auth0Id='" + auth0Id + '\'' +
+                '}';
+    }
 }

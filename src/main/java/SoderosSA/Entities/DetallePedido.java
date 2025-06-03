@@ -22,4 +22,13 @@ public class DetallePedido extends Base{
     private Articulo articulo;
     @Setter
     private Pedido pedido;
+
+    @Override
+    public String toString() {
+        return "DetallePedido{" +
+                "\ncantidad=" + cantidad +
+                "\n, subTotal=" + subTotal +
+                "\n, articulo=" + articulo.getDenominacion() +
+                '}';
+    }
 }

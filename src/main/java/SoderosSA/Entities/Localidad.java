@@ -23,8 +23,8 @@ public class Localidad extends Base{
     @Override
     public String toString() {
         return "Localidad{" +
-                "nombre='" + nombre + '\'' +
-                ", provincia=" + (provincia != null ? provincia.getNombre() : "No asignada") + '\'' +
+                "\nnombre='" + nombre + '\'' +
+                "\n, provincia=" + (provincia != null ? provincia.getNombre() : "No asignada") + '\'' +
                 '}';
     }
 }

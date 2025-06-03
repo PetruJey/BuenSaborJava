@@ -18,4 +18,18 @@ public class ArticuloInsumo extends Articulo{
     private Integer stockActual;
     private Integer stockMaximo;
     private Boolean esParaElaborar;
+
+    @Override
+    public String toString() {
+        return "ArticuloInsumo{" +
+                "\nprecioCompra=" + precioCompra +
+                "\n, stockActual=" + stockActual +
+                "\n, stockMaximo=" + stockMaximo +
+                "\n, esParaElaborar=" + esParaElaborar +
+                "\n, denominacion='" + denominacion + '\'' +
+                "\n, precioVenta=" + precioVenta +
+                "\n, categoria=" + getCategoria().getDenominacion() +
+                '}';
+    }
+
 }

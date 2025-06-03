@@ -21,4 +21,18 @@ public class ArticuloManufacturado extends Articulo{
     //Relacion 1 a muchos.
     @Builder.Default
     private Set<ArticuloManufacturadoDetalle> articuloManufacturadoDetalles = new HashSet<>();
+
+    public void agregarArticuloManufacturadoDetalle(ArticuloManufacturadoDetalle articuloManufacturadoDetalle){
+        articuloManufacturadoDetalles.add(articuloManufacturadoDetalle);
+    }
+
+    @Override
+    public String toString() {
+        return "ArticuloManufacturado{" +
+                "\ndescripcion='" + descripcion + '\'' +
+                "\n, tiempoEstimadoMinutos=" + tiempoEstimadoMinutos +
+                "\n, preparacion='" + preparacion + '\'' +
+                "\n, articuloManufacturadoDetalles=" + articuloManufacturadoDetalles +
+                '}';
+    }
 }

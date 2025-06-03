@@ -29,4 +29,24 @@ public class Cliente extends Base{
     //Relacion 1 a muchos.
     @Builder.Default
     private Set<Domicilio> domicilios = new HashSet<>();
+    @Builder.Default
+    private Set<Pedido> pedidos = new HashSet<>();
+
+    public void agregarDomicilio(Domicilio domicilio){
+        domicilios.add(domicilio);
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "\nnombre='" + nombre + '\'' +
+                "\n, apellido='" + apellido + '\'' +
+                "\n, telefono='" + telefono + '\'' +
+                "\n, email='" + email + '\'' +
+                "\n, fechaNacimiento=" + fechaNacimiento +
+                "\n, imagen=" + imagen +
+                "\n, usuario=" + usuario +
+                "\n, domicilios=" + domicilios +
+                '}';
+    }
 }

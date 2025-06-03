@@ -28,10 +28,10 @@ public class Domicilio extends Base{
     @Override
     public String toString() {
         return "Domicilio{" +
-                "calle='" + calle + '\'' +
-                ", numero=" + numero +
-                ", cp=" + cp +
-                ", localidad=" + (localidad != null ? localidad.getNombre() : "No asignada") + '\'' +
+                "\ncalle='" + calle + '\'' +
+                "\n, numero=" + numero +
+                "\n, cp=" + cp +
+                "\n, localidad=" + (localidad != null ? localidad.getNombre() : "No asignada") + '\'' +
                 '}';
     }
 }
