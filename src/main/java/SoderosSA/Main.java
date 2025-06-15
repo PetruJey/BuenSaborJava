@@ -16,19 +16,20 @@ public class Main {
         Imagen imagenU = Imagen.builder().denominacion("imagenUsuario.png").build();
         //Categoria Vinos
         Categoria C_vinos = Categoria.builder().denominacion("Vinos").build();
+        //Unidad de medida.
+        UnidadMedida unidadMedida = UnidadMedida.builder().denominacion("ml").build();
         //Provincia
         Provincia provincia = Provincia.builder()
                 .nombre("Mendoza")
-                .pais(new Pais("Argentina"))//Se instancia un nuevo objeto Pais.
                 .build();
+        //Pais
+        Pais pais = Pais.builder().nombre("Argentina").build();
         //Localidades
         Localidad localidad1 = Localidad.builder()
                 .nombre("Maipu")
-                .provincia(provincia)
                 .build();
         Localidad localidad2 = Localidad.builder()
                 .nombre("Godoy Cruz")
-                .provincia(provincia)//Se relaciona con provincia
                 .build();
         //Empresa
         Empresa empresa1 = Empresa.builder()
@@ -47,14 +48,12 @@ public class Main {
                 .calle("Alsina")
                 .numero(3786)
                 .cp(5511)
-                .localidad(localidad1)
                 .build();
         //Domicilio Cliente
         Domicilio domicilioC = Domicilio.builder()
                 .calle("Pergamino")
                 .numero(979)
                 .cp(5503)
-                .localidad(localidad2)
                 .build();
         //Articulo
         ArticuloInsumo articuloInsumo = ArticuloInsumo.builder()
@@ -62,9 +61,7 @@ public class Main {
                 .precioCompra(1200.0)
                 .precioVenta(1500.0)
                 .stockActual(100)
-                .unidadMedida(new UnidadMedida("ml"))
                 .esParaElaborar(false)
-                .categoria(C_vinos)
                 .build();
         //Articulo Manufacturado
         ArticuloManufacturado articuloManufacturado = ArticuloManufacturado.builder()
@@ -73,7 +70,6 @@ public class Main {
                 .build();
         //Articulo Manufacturado Detalle
         ArticuloManufacturadoDetalle articuloManufacturadoDetalle = ArticuloManufacturadoDetalle.builder()
-                .articuloInsumo(articuloInsumo)
                 .cantidad(6)
                 .build();
         //Usuario
@@ -107,13 +103,11 @@ public class Main {
                 .mpPaymentType("Transferencia Bancaria")
                 .formaPago(FormaPago.MERCADOPAGO)
                 .totalVenta(5000.0)
-                .pedido(pedido)
                 .build();
         //Detalle Pedido
         DetallePedido detallePedido = DetallePedido.builder()
                 .cantidad(1)
                 .subTotal(3300.0)
-                .articulo(articuloInsumo)
                 .build();
         //Promocion
         Promocion promocion = Promocion.builder()
@@ -133,16 +127,28 @@ public class Main {
         sucursal.setDomicilio(domicilioS);
         sucursal.agregarPromociones(promocion);
 
+        //Se crean relaciones de localidades.
+        provincia.setPais(pais);
+        domicilioS.setLocalidad(localidad1);
+        domicilioC.setLocalidad(localidad2);
+        localidad1.setProvincia(provincia);
+        localidad2.setProvincia(provincia);
+
 
         //Se crean relaciones de un pedido.
         pedido.setSucursal(sucursal);
         pedido.agregarDetallePedidos(detallePedido);
+        detallePedido.setArticulo(articuloInsumo);
+        detallePedido.setPedido(pedido);
         pedido.setFactura(factura);
         pedido.setCliente(cliente);
 
         //Se crean relaciones del articulo.
         articuloManufacturado.agregarArticuloManufacturadoDetalle(articuloManufacturadoDetalle);
+        articuloManufacturadoDetalle.setArticuloInsumo(articuloInsumo);
         articuloInsumo.agregarImagenes(imagenV);
+        articuloInsumo.setUnidadMedida(unidadMedida);
+        articuloInsumo.setCategoria(C_vinos);
         promocion.agregarImagenes(imagenP);
         promocion.agregarSucursal(sucursal);
         C_vinos.agregarArticulos(articuloInsumo);

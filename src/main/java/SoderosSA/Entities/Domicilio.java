@@ -22,7 +22,6 @@ public class Domicilio extends Base{
     private Integer cp;
 
     //Relacion 1 a 1.
-    @Setter
     private Localidad localidad;
 
     @Override
@@ -34,4 +33,5 @@ public class Domicilio extends Base{
                 "\n, localidad=" + (localidad != null ? localidad.getNombre() : "No asignada") + '\'' +
                 '}';
     }
+
 }

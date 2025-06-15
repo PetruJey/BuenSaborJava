@@ -39,4 +39,5 @@ public class Empresa extends Base{
                 .orElse("No hay sucursales") +
                 '}';
     }
+
 }
